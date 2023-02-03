@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Ahmet",
+        "old": 25,
+        "job": "Elektirik"
+        
+    },
+    {
+        "name": "Mehhmet",
+        "old": 22,
+        "job": "Elektirik"
+    },
+    {
+        "name": "Murat",
+        "old": 35,
+        "job": "Fırıncı"
+    },
+    {
+        "name": "Hacı İlyas",
+        "old": 33,
+        "job": "Hoca"
+    }
+]
