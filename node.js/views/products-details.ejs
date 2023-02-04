@@ -8,14 +8,6 @@
     <title>Document</title>
 </head>
 <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(53, 52, 52);
-        box-shadow: inset 1px 1px 110px 10px rgba(241, 240, 238, 0.252);
-    }
-
     .container {
         background-color: aliceblue;
         display: flex;
@@ -47,28 +39,35 @@
 </style>
 
 <body>
-    <div class="container">
-        <img src="/images/<%=image%>" width="200" alt="">
-        <div class="text">
-            <h1>
-                Marka:<%= name%>
-            </h1>
-            <hr>
-            <h1>
-                Fiyat: <%= price %>
-            </h1>
-            <hr>
-            <% if (isActive) { %>
-                <h1> Durum :Ürün Satışta</h1> <hr>
-                <% }else{%> 
-                    <h1> Durum :Satışta değil</h1> <hr>
-                    <% } %>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio animi tempore dolore vitae
-                            alias,
-                            quibusdam maiores distinctio, molestiae neque numquam, natus quis molestias ipsa labore amet
-                            rem magni. Voluptatem?</p> <hr>
+    <%- include("partials/navbar.ejs") %>
+
+        <div class="container">
+            <img src="/images/<%=products.img%>" width="200" alt="">
+            <div class="text">
+                <h1>
+                    Marka:<%=products.name%>
+                </h1>
+                <hr>
+                <h1>
+                    Fiyat: <%= products.price %>
+                </h1>
+                <hr>
+                <% if (products.isActive) { %>
+                    <h1> Durum :Ürün Satışta</h1>
+                    <hr>
+                    <% }else{%>
+                        <h1> Durum :Satışta değil</h1>
+                        <hr>
+                        <% } %>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio animi tempore dolore
+                                vitae
+                                alias,
+                                quibusdam maiores distinctio, molestiae neque numquam, natus quis molestias ipsa labore
+                                amet
+                                rem magni. Voluptatem?</p>
+                            <hr>
+            </div>
         </div>
-    </div>
 
 </body>
 
