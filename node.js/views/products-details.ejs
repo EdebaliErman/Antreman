@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        width: 550px;
+        box-shadow: 3px 3px 32px 3px black;
+    }
+
+    .container img:hover {
+        position: absolute;
+       top: 150px;
+       width: 950px;
+        width: 600px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img src="/images/<%=image%>" width="200" alt="">
+        <div class="text">
+            <h1>
+                Marka:<%= name%>
+            </h1>
+
+            <h1>
+                fiyat: <%= price %>
+            </h1>
+
+            <% if (isActive) { %>
+                <h1> Durum :Ürün Satışta</h1>
+                <% }else{%>
+                    <h1> Durum :Satışta değil</h1>
+                    <% } %>
+        </div>
+    </div>
+
+</body>
+
+</html>
