@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-reboot.min.css">
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: rgb(53, 52, 52);
+        box-shadow: inset 1px 1px 110px 10px rgba(241, 240, 238, 0.252);
     }
+
     .container {
+        background-color: aliceblue;
         display: flex;
         align-items: center;
-        padding: 15px;
-        width: 550px;
+
+        padding: 5rem;
+        width: 750px;
         box-shadow: 3px 3px 32px 3px black;
     }
 
-    .container img:hover {
-        position: absolute;
-       top: 150px;
-       width: 950px;
-        width: 600px;
+    .container:hover {
+
+        box-shadow: inset 1px 1px 110px 1px orange;
+    }
+
+    .container img {
+        padding: 2rem;
+    }
+
+    .container h1:hover,
+    p:hover {
+        color: orange;
+
+    }
+
+    .container h1 {
+        font-size: 26px;
     }
 </style>
 
@@ -35,16 +53,20 @@
             <h1>
                 Marka:<%= name%>
             </h1>
-
+            <hr>
             <h1>
-                fiyat: <%= price %>
+                Fiyat: <%= price %>
             </h1>
-
+            <hr>
             <% if (isActive) { %>
-                <h1> Durum :Ürün Satışta</h1>
-                <% }else{%>
-                    <h1> Durum :Satışta değil</h1>
+                <h1> Durum :Ürün Satışta</h1> <hr>
+                <% }else{%> 
+                    <h1> Durum :Satışta değil</h1> <hr>
                     <% } %>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio animi tempore dolore vitae
+                            alias,
+                            quibusdam maiores distinctio, molestiae neque numquam, natus quis molestias ipsa labore amet
+                            rem magni. Voluptatem?</p> <hr>
         </div>
     </div>
 
