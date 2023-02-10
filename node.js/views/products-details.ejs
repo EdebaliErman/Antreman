@@ -1,74 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="/css/products-details.css">
     <title>Document</title>
 </head>
-<style>
-    .container {
-        background-color: aliceblue;
-        display: flex;
-        align-items: center;
 
-        padding: 5rem;
-        width: 750px;
-        box-shadow: 3px 3px 32px 3px black;
-    }
-
-    .container:hover {
-
-        box-shadow: inset 1px 1px 110px 1px orange;
-    }
-
-    .container img {
-        padding: 2rem;
-    }
-
-    .container h1:hover,
-    p:hover {
-        color: orange;
-
-    }
-
-    .container h1 {
-        font-size: 26px;
-    }
-</style>
+<style></style>
 
 <body>
     <%- include("partials/navbar.ejs") %>
 
-        <div class="container">
-            <img src="/images/<%=products.img%>" width="200" alt="">
-            <div class="text">
-                <h1>
-                    Marka:<%=products.name%>
-                </h1>
-                <hr>
-                <h1>
-                    Fiyat: <%= products.price %>
-                </h1>
-                <hr>
-                <% if (products.isActive) { %>
-                    <h1> Durum :Ürün Satışta</h1>
-                    <hr>
-                    <% }else{%>
-                        <h1> Durum :Satışta değil</h1>
-                        <hr>
-                        <% } %>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio animi tempore dolore
-                                vitae
-                                alias,
-                                quibusdam maiores distinctio, molestiae neque numquam, natus quis molestias ipsa labore
-                                amet
-                                rem magni. Voluptatem?</p>
-                            <hr>
+        <div class="card-details">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/images/<%=products.img%> " class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=products.name %>
+                            </h5>
+                            <h5 class="card-title">
+                                <%=products.price %>
+                            </h5>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Cumque deserunt non assumenda, quae ullam consequuntur unde modi natus aliquam harum
+                                aspernatur omnis? Distinctio quis natus adipisci dolor excepturi quasi illum?</p> <br>
+                            <% if (products.isActive) { %>
+                                <style>
+                                    .card-details .card {
+
+                                        box-shadow: inset 4px 4px 54px 4px rgb(160, 231, 145);
+                                    }
+                                </style>
+                                <a href="/products/<%=products.id%> "> <button type="button"
+                                        class="btn btn-outline-success">Satın Al</button></a>
+
+                                <% }else {%>
+                                    <style>
+                                        .card-details .card {
+    
+                                            box-shadow: inset 4px 4px 54px 4px rgb(240, 120, 120);
+                                        }
+                                    </style>
+                                    <p style="
+                                font-style: italic;
+                                color: red;
+                                font-size: 36px;
+                                "> Maalesef ürünümüz satışta değil</p>
+                                    <%}%>
+
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
 </body>
 
 </html>
