@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="/css/products-details.css">
+    <title>Document</title>
+</head>
+
+<style></style>
+
+<body>
+    <%- include("partials/navbar.ejs") %>
+
+        <div class="card-details">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/images/<%=products.img%> " class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=products.name %>
+                            </h5>
+                            <h5 class="card-title">
+                                <%=products.price %>
+                            </h5>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Cumque deserunt non assumenda, quae ullam consequuntur unde modi natus aliquam harum
+                                aspernatur omnis? Distinctio quis natus adipisci dolor excepturi quasi illum?</p> <br>
+                            <% if (products.isActive) { %>
+                                <style>
+                                    .card-details .card {
+
+                                        box-shadow: inset 4px 4px 54px 4px rgb(160, 231, 145);
+                                    }
+                                </style>
+                                <a href="/products/<%=products.id%> "> <button type="button"
+                                        class="btn btn-outline-success">Satın Al</button></a>
+
+                                <% }else {%>
+                                    <style>
+                                        .card-details .card {
+    
+                                            box-shadow: inset 4px 4px 54px 4px rgb(240, 120, 120);
+                                        }
+                                    </style>
+                                    <p style="
+                                font-style: italic;
+                                color: red;
+                                font-size: 36px;
+                                "> Maalesef ürünümüz satışta değil</p>
+                                    <%}%>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
